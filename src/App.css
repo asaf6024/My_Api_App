@@ -7,6 +7,40 @@
   pointer-events: none;
 }
 
+.cardOfArticle {
+  background-color: #2a477626;
+  height: 600px;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+.contentOfArticle {
+  height: 300px;
+}
+.contentOfArticle h2 {
+  font-size: x-large;
+}
+.imageOfArticle {
+  height: 350px;
+  padding-top: 15px;
+}
+.imageOfArticle h5 {
+  text-align: left;
+  margin-top: 0;
+  padding-left: 70px;
+}
+.imageOfArticle a {
+  text-decoration: none;
+  color: #212529;
+}
+
+.cardOfArticle img {
+  width: inherit;
+  height: 150px;
+  text-align: center;
+  margin: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
