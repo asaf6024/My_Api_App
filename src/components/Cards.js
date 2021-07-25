@@ -1,6 +1,5 @@
 import React from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBIcon, MDBCol } from 'mdbreact';
-import moment from 'moment'
+import { MDBCardBody, MDBCol } from 'mdbreact';
 
 class Card extends React.Component {
     constructor(props) {
@@ -26,7 +25,7 @@ class Card extends React.Component {
                         </div>
                         <div className="imageOfArticle">
                             <a href={this.props.url_article} target="_blank" title={this.props.urlToImage}>
-                                <img src={this.props.urlToImage}></img>
+                                <img src={this.props.urlToImage} alt='api image'></img>
                             </a>
                             <h5> <a href={this.props.url_article} target="_blank">Read more</a></h5>
 
