@@ -10,13 +10,47 @@
 i {
   cursor: pointer;
 }
-
+.header {
+  background-color: rgb(27, 9, 9);
+  padding: 15px;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+.footer {
+  background-color: rgb(27, 9, 9);
+  height: 100px;
+}
+.footer p {
+  color: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.header h1 {
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+}
+.container {
+  padding-top: 100px;
+}
 .form-control:focus {
   color: #495057;
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+.form-control label {
+  font-weight: bolder;
+}
+.form-control span {
+  font-size: small;
 }
 .cardOfArticle {
   background-color: #2a477626;
@@ -78,11 +112,8 @@ i {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 600px) {
+  .header h1 {
+    font-size: large;
   }
 }

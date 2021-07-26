@@ -18,10 +18,12 @@ class Card extends React.Component {
                             {/* <h3>{this.props.description}</h3> */}
                         </div>
                         <div className="imageOfArticle">
-                            <a href={this.props.url_article} target="_blank" title={this.props.urlToImage}>
+                            <a href={this.props.url_article} target="_blank" title={this.props.url_article}>
                                 <img src={this.props.urlToImage} alt='api image'></img>
                             </a>
-                            <h5> <a href={this.props.url_article} target="_blank">Read more</a></h5>
+                            <h5 title={this.props.url_article}> <a href={this.props.url_article} target="_blank">Read more&nbsp;
+                                <i className="fas fa-angle-double-right"></i>
+                            </a></h5>
                             <br />
                             <i className="fas fa-trash-alt fa-3x"
                                 title='splice'

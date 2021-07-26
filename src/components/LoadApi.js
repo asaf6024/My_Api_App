@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Cards from './Cards';
 import axios from "axios";
 import moment from 'moment'
-import { MDBRow, MDBCol } from 'mdbreact'
+import { MDBRow, MDBCol, MDBCard } from 'mdbreact'
 
 function LoadApi() {
     const [articles, setArticles] = useState([])
@@ -133,12 +133,13 @@ function LoadApi() {
     }
     return (
         <div>
+            <br />
             <MDBRow className="col-sm-12">
                 <div className="col-sm-12 text-center">
                     <input type="search"
                         title='filter'
                         className="col-sm-12 text-center form-control"
-                        placeholder="Type a to search"
+                        placeholder="Type to search"
                         onChange={e => filterByText(e)}>
                     </input>
                 </div>
@@ -153,7 +154,7 @@ function LoadApi() {
                 </MDBCol>
                 <MDBCol md='4' className='form-control'>
                     <label title='filter' className='col-md-12'>Filter articles of today:&nbsp;
-                        <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>
+                        <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>&nbsp;
                     </label>
 
                 </MDBCol>
@@ -179,7 +180,11 @@ function LoadApi() {
                                 </select>
 
                             </MDBCol>
-                            <br /><br /><br />
+                            <br /> <br />
+                            <div className="col-sm-12 text-center">
+                                <span className="col-md-12 text-center">Total - {articles.length}/20</span>
+                            </div>
+                            <br />
                             <hr />
                             {load()}
 

@@ -1,13 +1,19 @@
 import './App.css';
+
+import Header from './components/Header';
 import LoadApi from './components/LoadApi';
+import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+      <Header />
+
       <div className="container">
-        <h1>Top 20 Articles in last 24 hours</h1>
         <LoadApi />
       </div>
-    </div>
+      <Footer />
+
+    </div >
   );
 }
 
