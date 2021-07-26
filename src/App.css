@@ -7,8 +7,20 @@
   pointer-events: none;
 }
 
+i {
+  cursor: pointer;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
 .cardOfArticle {
   background-color: #2a477626;
+
   height: 600px;
   margin: 5px;
   padding: 5px;
@@ -19,6 +31,7 @@
 }
 .contentOfArticle h2 {
   font-size: x-large;
+  font-weight: bolder;
 }
 .imageOfArticle {
   height: 350px;
@@ -33,12 +46,15 @@
   text-decoration: none;
   color: #212529;
 }
-
+.imageOfArticle i:hover {
+  color: red;
+}
 .cardOfArticle img {
   width: inherit;
   height: 150px;
   text-align: center;
   margin: auto;
+  border-radius: 0.25rem !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
