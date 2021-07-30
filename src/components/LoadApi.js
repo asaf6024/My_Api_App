@@ -23,7 +23,7 @@ function LoadApi() {
 
     const getDataFromApi = () => {
         axios
-            .get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=04fa289ca9a047bba41bbeadfc22b364`)
+            .get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 console.log(res.data.articles)
                 setArticles(res.data.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)))
