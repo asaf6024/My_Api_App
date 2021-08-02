@@ -26,7 +26,12 @@ function LoadApi() {
         const url = `${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`;
         const request = new Request(url);
 
-        fetch(`${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`)
+        fetch(`${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then(response => response.json())
             .then((res) => {
                 console.log(res);
