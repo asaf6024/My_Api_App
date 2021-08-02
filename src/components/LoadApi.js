@@ -22,15 +22,32 @@ function LoadApi() {
     }, []);
 
     const getDataFromApi = () => {
-        axios
-            .get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`)
-            .then(res => {
-                console.log(res.data.articles)
-                setArticles(res.data.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)))
-                setArticlesStatic(res.data.articles)
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+        const qInTitle = "";
+        const url = `${proxyUrl}https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`;
+        const request = new Request(url);
+
+        fetch(request)
+            .then(response => response.json())
+            .then((res) => {
+                console.log(res);
+                setArticles(res.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)))
+                setArticlesStatic(res.articles)
                 setLoadData(false)
             })
-            .catch(e => console.log('error ', e))
+            .catch(error => {
+                console.log(error);
+            });
+
+        // axios
+        //     .get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`)
+        //     .then(res => {
+        //         console.log(res.data.articles)
+        //         setArticles(res.data.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)))
+        //         setArticlesStatic(res.data.articles)
+        //         setLoadData(false)
+        //     })
+        //     .catch(e => console.log('error ', e))
 
     }
 
