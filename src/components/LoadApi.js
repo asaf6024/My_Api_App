@@ -11,7 +11,7 @@ function LoadApi() {
     const [authors, setAuthors] = useState([])
     const [today, SetToday] = useState(null)
     const [isTodaySelected, setIsTodaySelected] = useState(false)
-
+    const [display, setDisplay] = useState('none')
     useEffect(() => {
         getDataFromApi();
 
@@ -154,36 +154,37 @@ function LoadApi() {
     }
     return (
         <div>
-            <br />
-            <MDBRow className="col-sm-12">
-                <div className="col-sm-12 text-center">
-                    <input type="search"
-                        title='filter'
-                        className="col-sm-12 text-center form-control"
-                        placeholder="Type to search"
-                        onChange={e => filterByText(e)}>
-                    </input>
-                </div>
-                <br /><br />
-                <MDBCol md='4' className='form-control'>
-                    <label className='col-md-6'>Sort by Date:
-                    </label>
-                    <select className='col-md-6' onChange={e => sortData(e)} title='sort'>
-                        <option value="1" selected={true}>New to old</option>
-                        <option value="2">Old to new</option>
-                    </select>
-                </MDBCol>
-                <MDBCol md='4' className='form-control'>
-                    <label title='filter' className='col-md-12'>Filter articles of today:&nbsp;
-                        <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>&nbsp;
-                    </label>
+            {
+                !loadData ?
+                    <>
+                        <br />
+                        <MDBRow className="col-sm-12">
+                            <div className="col-sm-12 text-center">
+                                <input type="search"
+                                    title='filter'
+                                    className="col-sm-12 text-center form-control"
+                                    placeholder="Type to search"
+                                    onChange={e => filterByText(e)}>
+                                </input>
+                            </div>
+                            <br /><br />
+                            <MDBCol md='4' className='form-control'>
+                                <label className='col-md-6'>Sort by Date:
+                                </label>
+                                <select className='col-md-6' onChange={e => sortData(e)} title='sort'>
+                                    <option value="1" selected={true}>New to old</option>
+                                    <option value="2">Old to new</option>
+                                </select>
+                            </MDBCol>
+                            <MDBCol md='4' className='form-control'>
+                                <label title='filter' className='col-md-12'>Filter articles of today:&nbsp;
+                                    <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>&nbsp;
+                                </label>
 
-                </MDBCol>
+                            </MDBCol>
 
-                {/* <button onClick={() => load()}>Sort</button> */}
-                {
-                    !loadData ?
-                        <>
+                            {/* <button onClick={() => load()}>Sort</button> */}
+
                             <MDBCol md='4' className='form-control'>
                                 <label className='col-md-6'>Filter by Author:
                                 </label>
@@ -209,12 +210,48 @@ function LoadApi() {
                             <hr />
                             {load()}
 
-                        </>
-                        : <h2 className="text-center">Loading...</h2>
-                }
 
-            </MDBRow>
 
+                        </MDBRow>
+                    </>
+                    : <>
+
+
+                        <h2 className="text-center">
+                            <div className='text-left col-md-8 font-weight-bolder' style={{ margin: 'auto' }, { fontSize: '14pt' }}>
+
+                                <p>To load this website please do the next QUICK steps:&nbsp;<i className="far fa-smile fa-2x"></i>
+                                </p>
+                                <br />
+                                <p>
+                                    1.<a href='https://cors-anywhere.herokuapp.com/' target='_blank'>click here </a>
+                                    <span>  and then click on: <strong>"Request temporary access to the demo server"</strong></span>
+                                </p>
+
+
+                                <p>2. Refresh Website&nbsp;
+                                    <a href='/'>
+                                        <i class="fas fa-sync-alt fa-2x"></i>
+                                    </a>
+                                </p>
+                                <p><i className="fas fa-question-circle fa-2x" title='Why?'
+                                    onClick={() => display == 'none' ? setDisplay('block') : setDisplay('none')
+                                    }
+
+                                ></i></p>
+                                <div style={{ display }}>
+                                    <h2>Why?</h2>
+
+                                    <p>This site used API who isn't a third party library.</p>
+                                    <p>To enable this API (without using a server) - we are using a free proxy</p>
+                                </div>
+                            </div>
+
+                            <i className="fas fa-hand-point-up"></i>&nbsp;
+                            Follow the instructions above
+                        </h2>
+                    </>
+            }
         </div>
     )
 }
