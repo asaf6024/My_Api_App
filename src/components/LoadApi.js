@@ -23,11 +23,10 @@ function LoadApi() {
 
     const getDataFromApi = () => {
         const proxyUrl = "https://cors-anywhere.herokuapp.com/"
-        const url = `${proxyUrl}/https://news-api-server.netlify.app/.netlify/functions/api`;
-        // const request = new Request(url);
+        const url = `${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`;
+        const request = new Request(url);
 
-        // fetch(request)
-        fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`)
+        fetch(`${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`)
             .then(response => response.json())
             .then((res) => {
                 console.log(res);
