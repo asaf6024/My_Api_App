@@ -24,7 +24,7 @@ function LoadApi() {
     const getDataFromApi = () => {
         const proxyUrl = "https://cors-anywhere.herokuapp.com/"
         const qInTitle = "";
-        const url = `${proxyUrl}https://newsapi.org/v2/everything?q=Apple&from=2021-07-25&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`;
+        const url = `${proxyUrl}https://news-api-server.netlify.app/.netlify/functions/api`;
         const request = new Request(url);
 
         fetch(request)
