@@ -116,4 +116,16 @@ i {
   .header h1 {
     font-size: large;
   }
+  select.col-md-6.col-sm-6,
+  label.col-md-6.col-sm-6 {
+    width: 50% !important;
+  }
+  label,
+  option {
+    font-size: small;
+  }
+  .cardOfArticle,
+  .contentOfArticle {
+    height: min-content;
+  }
 }

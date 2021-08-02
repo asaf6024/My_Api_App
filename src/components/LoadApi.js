@@ -169,14 +169,14 @@ function LoadApi() {
                             </div>
                             <br /><br />
                             <MDBCol md='4' className='form-control'>
-                                <label className='col-md-6'>Sort by Date:
+                                <label className='col-md-6 col-sm-6'>Sort by Date:
                                 </label>
-                                <select className='col-md-6' onChange={e => sortData(e)} title='sort'>
+                                <select className='col-md-6 col-sm-6' onChange={e => sortData(e)} title='sort'>
                                     <option value="1" selected={true}>New to old</option>
                                     <option value="2">Old to new</option>
                                 </select>
                             </MDBCol>
-                            <MDBCol md='4' className='form-control'>
+                            <MDBCol md='4' className='form-control col-sm-12'>
                                 <label title='filter' className='col-md-12'>Filter articles of today:&nbsp;
                                     <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>&nbsp;
                                 </label>
@@ -185,10 +185,10 @@ function LoadApi() {
 
                             {/* <button onClick={() => load()}>Sort</button> */}
 
-                            <MDBCol md='4' className='form-control'>
-                                <label className='col-md-6'>Filter by Author:
+                            <MDBCol md='4' className='form-control col-sm-12'>
+                                <label className='col-md-6 col-sm-6'>Filter by Author:
                                 </label>
-                                <select className='col-md-6' onChange={e => filterByAuthor(e)} title='filter'>
+                                <select className='col-md-6 col-sm-6' onChange={e => filterByAuthor(e)} title='filter'>
                                     <option value={'0'}>Not filtered</option>
                                     {
                                         authors.map((element, index) => {
@@ -203,8 +203,8 @@ function LoadApi() {
 
                             </MDBCol>
                             <br /> <br />
-                            <div className="col-sm-12 text-center">
-                                <span className="col-md-12 text-center">Total - {articles.length}/20</span>
+                            <div className="col-sm-12 text-center" style={{ top: '20px' }}>
+                                <p className="col-md-12 text-center">Total - {articles.length}/20</p>
                             </div>
                             <br />
                             <hr />
@@ -220,11 +220,11 @@ function LoadApi() {
                         <h2 className="text-center">
                             <div className='text-left col-md-8 font-weight-bolder' style={{ margin: 'auto' }, { fontSize: '14pt' }}>
 
-                                <p>To load this website please do the next QUICK steps:&nbsp;<i className="far fa-smile fa-2x"></i>
+                                <p>To load this website please follow the next QUICK steps:&nbsp;<i className="far fa-smile fa-2x"></i>
                                 </p>
                                 <br />
                                 <p>
-                                    1.<a href='https://cors-anywhere.herokuapp.com/' target='_blank'>click here </a>
+                                    1.<a href='https://cors-anywhere.herokuapp.com/' target='_blank'>Click here </a>
                                     <span>  and then click on: <strong>"Request temporary access to the demo server"</strong></span>
                                 </p>
 
@@ -242,11 +242,11 @@ function LoadApi() {
                                 <div style={{ display }}>
                                     <h2>Why?</h2>
 
-                                    <p>This site used API who isn't a third party library.</p>
+                                    <p>This site using an API who dose'nt support CORS from the client (browser).</p>
                                     <p>To enable this API (without using a server) - we are using a free proxy</p>
                                 </div>
                             </div>
-
+                            <br /><br /><br /><br />
                             <i className="fas fa-hand-point-up"></i>&nbsp;
                             Follow the instructions above
                         </h2>
