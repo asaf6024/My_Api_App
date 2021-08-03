@@ -168,7 +168,7 @@ function LoadApi() {
                                 </input>
                             </div>
                             <br /><br />
-                            <MDBCol md='4' className='form-control'>
+                            <MDBCol md='12' lg='4' className='form-control'>
                                 <label className='col-md-6 col-sm-6'>Sort by Date:
                                 </label>
                                 <select className='col-md-6 col-sm-6' onChange={e => sortData(e)} title='sort'>
@@ -176,7 +176,7 @@ function LoadApi() {
                                     <option value="2">Old to new</option>
                                 </select>
                             </MDBCol>
-                            <MDBCol md='4' className='form-control col-sm-12'>
+                            <MDBCol md='12' lg='4' className='form-control col-sm-12'>
                                 <label title='filter' className='col-md-12'>Filter articles of today:&nbsp;
                                     <input type="checkbox" onChange={(e) => filterOnlyToday(e)} value={today}></input>&nbsp;
                                 </label>
@@ -185,10 +185,10 @@ function LoadApi() {
 
                             {/* <button onClick={() => load()}>Sort</button> */}
 
-                            <MDBCol md='4' className='form-control col-sm-12'>
-                                <label className='col-md-6 col-sm-6'>Filter by Author:
+                            <MDBCol md='12' lg='4' className='form-control col-sm-12'>
+                                <label className='col-md-6 col-lg-7 col-sm-6'>Filter by Author:
                                 </label>
-                                <select className='col-md-6 col-sm-6' onChange={e => filterByAuthor(e)} title='filter'>
+                                <select className='col-md-6 col-lg-5 col-sm-6' onChange={e => filterByAuthor(e)} title='filter'>
                                     <option value={'0'}>Not filtered</option>
                                     {
                                         authors.map((element, index) => {

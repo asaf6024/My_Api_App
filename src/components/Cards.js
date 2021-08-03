@@ -4,7 +4,7 @@ import { MDBCardBody, MDBCol } from 'mdbreact';
 class Card extends React.Component {
     render() {
         return (
-            <MDBCol md='6' sm='12' lg='4' style={{ display: 'inline-flex' }}>
+            <MDBCol md='12' lg='4' style={{ display: 'inline-flex' }}>
                 {/* <MDBCard style={{ width: "22rem" }}> */}
                 {/* <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves /> */}
                 <MDBCardBody>
