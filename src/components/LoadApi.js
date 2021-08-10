@@ -242,7 +242,7 @@ function LoadApi() {
                                 <div style={{ display }}>
                                     <h2>Why?</h2>
 
-                                    <p>This site using an API who dose'nt support CORS from the client (browser).</p>
+                                    <p>This site using an API who dosen't support CORS from the client (browser).</p>
                                     <p>To enable this API (without using a server) - we are using a free proxy</p>
                                 </div>
                             </div>
